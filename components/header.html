@@ -1,0 +1,30 @@
+<nav>
+    <input type="checkbox" id="res-menu">
+    <label for="res-menu">
+        <i class="fas fa-bars" id="s1"></i>
+        <i class="fas fa-times" id="s2"></i>
+    </label>
+    <img src="./img/jithson.png" alt="jithson">
+    <ul>
+        <li><a id="home" class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+    </ul>
+</nav>
+<script>
+    jQuery(function($) {
+    var path = window.location.href;
+    console.log(path); 
+    // because the 'href' property of the DOM element is the absolute path
+    $('ul a').each(function() {
+      if (this.href === path) {
+        if ($('#home').hasClass('active')) {
+              $('#home').removeClass('active');
+          }
+        $(this).addClass('active');
+      }
+    });
+});
+</script>

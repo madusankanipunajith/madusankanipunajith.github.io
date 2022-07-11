@@ -1,0 +1,178 @@
+/* Timeline */
+.wrapper{
+    height: auto;
+    padding: 10px 20px;
+    position: relative;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgb(173, 37, 227) 0%, rgba(225,245,249,1) 100%);
+}
+
+/*Vertical line*/
+.wrapper .vertical-line{
+    position: absolute;
+    height: 95%;
+    width: 4px;
+    background-color: #fff;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.wrapper .heading{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+/* Card */
+.wrapper .row{
+    display: flex;
+}
+.wrapper .sec1{
+    justify-content: flex-start;
+}
+.wrapper .sec2{
+    justify-content: flex-end;
+}
+.wrapper a{
+    text-decoration: none;
+    color: #fff;
+}
+.wrapper .row section {
+    background-color: #fff;
+    border-radius: 5px;
+    width: calc(50% - 40px);
+    padding: 20px;
+    position: relative;
+}
+.wrapper .row section::before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 40px;
+    background-color: #fff;
+    top: 0;
+    border-radius: 5px;
+    z-index: -1;
+}
+.sec1 section::before{
+    right: -30px;
+} 
+.sec2 section::before{
+    left: -30px;
+} 
+
+/* Card icon and Scroll icon */
+.row section > i, .vertical-line .scroll {
+    position: absolute;
+    background-color: #9b59b6;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.sec1 section > i{
+    top: 10px;
+    right: -60px;
+} 
+.sec2 section > i{
+    top: 10px;
+    left: -60px;
+} 
+.vertical-line .scroll{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Card body */
+.row section p{
+    line-height: 20px;
+    border: 2px solid #9b59b6;
+    padding: 10px;
+    border-radius: 5px;
+}
+.row section .details, .row section .bottom{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+.row section .details img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #9b59b6;
+    background-size: cover;
+}
+.row section .details span{
+    background-color: #9b59b6;
+    color: #fff;
+    margin-left: 20px;
+    padding: 3px 5px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+.row section .bottom a{
+    background-color: #9b59b6;
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.row section .bottom i{
+    margin-left: 20px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+@media(max-width: 750px){
+    /* Vertical line */
+    .wrapper .vertical-line{
+        left: 30px;
+    }
+    /*cards*/
+    .wrapper .row{
+        margin: 30px 0 3px 60px;
+    }
+    .wrapper .row section{
+        width: 100%;
+    }
+    .sec1 section::before{
+        left: -30px;
+    }
+
+    /* Card Icon */
+    .sec1 section > i{
+        left: -70px;
+    }
+    .sec2 section > i{
+        left: -70px;
+    }
+}
+
+@media(max-width: 510px){
+    /* Card body */
+    .row section .bottom a{
+        font-size: 0.6rem;
+    }
+    .row section p{
+        font-size: 0.9rem;
+    }
+    .row section .details .title{
+        font-size: 1rem;
+    }
+    .row section .details span,.row section .bottom i{
+        font-size: 0.6rem;
+    }
+  
+    
+}
